@@ -1,16 +1,17 @@
-export var log = (msg) => console.log(msg);
-    log.label = (label, msg) => console.log(label, msg);
-    log.clear = () => console.clear();
-    log.red = (msg) => console.log('\x1b[91m%s\x1b[0m', msg);
-    log.yellow = (msg) => console.log('\x1b[33m%s\x1b[0m', msg);
-    log.green = (msg) => console.log('\x1b[32m%s\x1b[0m', msg);
-    log.cyan = (msg) => console.log('\x1b[36m%s\x1b[0m', msg);
-    log.blue = (msg) => console.log('\x1b[94m%s\x1b[0m', msg);
-    log.matches = (a, condition, b) => console.log(a + ` ${condition} ` + b + " ? " + (eval(`${a} ${condition} ${b}`) ? "✅" : "⛔️"));
+var log = console.log;
+log.table = console.table;
+log.warn = console.warn;
+log.error = console.error;
+log.clear = console.clear;
+log.cyan = (...args) => log('\x1b[36m%s\x1b[0m', ...args);
+log.blue = (...args) => log('\x1b[94m%s\x1b[0m', ...args);
+log.green = (...args) => log('\x1b[32m%s\x1b[0m', ...args);
+log.yellow = (...args) => log('\x1b[33m%s\x1b[0m', ...args);
+log.red = (...args) => log('\x1b[91m%s\x1b[0m', ...args);
 
-export const utils = {
+const utils = {
     sort2d: (arr, index) => arr.sort((a, b) => a[index] - b[index]),
-    random: (min, max) => Math.random() * ((max - min) + min),
+    random: (min, max) => Math.floor(Math.random() * ((max - min) + min)),
     unique: (arr) => Array.from(new Set(arr)),
     uniqueKeys: (arr, key) => {
       var flags = [],
@@ -40,3 +41,5 @@ export const utils = {
       else return Math.abs(timestamp1 - timestamp2);
     },
 };
+
+module.exports = { utils, log };

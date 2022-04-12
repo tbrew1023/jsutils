@@ -1,0 +1,28 @@
+{
+  "name": "@bruu/utils",
+  "version": "0.1.0",
+  "description": "Just a few useful JS utils.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trentbrew/js-utils.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "JS",
+    "ES6",
+    "utils",
+    "utilities",
+    "helpers",
+    "functions"
+  ],
+  "author": "Trent Brew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trentbrew/js-utils/issues"
+  },
+  "homepage": "https://github.com/trentbrew/js-utils#readme"
+}
